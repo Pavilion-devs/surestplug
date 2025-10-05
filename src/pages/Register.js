@@ -56,6 +56,7 @@ const Register = () => {
       id: 'dropshipping_partner',
       title: 'Dropshipping Partner',
       description: 'Grow your business or represent local brands to earn commissions.',
+      comingSoon: true,
       icon: (
         <svg className="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
@@ -93,20 +94,38 @@ const Register = () => {
         </p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-4xl mx-auto">
         {userTypes.map((type) => (
           <button
             key={type.id}
-            onClick={() => handleRoleSelect(type.id)}
-            className="border-2 border-neutral-200 rounded-lg p-6 hover:border-neutral-900 transition-all duration-300 hover:shadow-lg group text-left"
+            onClick={() => !type.comingSoon && handleRoleSelect(type.id)}
+            disabled={type.comingSoon}
+            className={`border-2 rounded-lg p-6 transition-all duration-300 group text-left ${
+              type.comingSoon 
+                ? 'border-neutral-100 bg-neutral-50 cursor-not-allowed opacity-60' 
+                : 'border-neutral-200 hover:border-neutral-900 hover:shadow-lg'
+            }`}
           >
-            <div className="text-neutral-900 mb-4 group-hover:scale-110 transition-transform duration-300">
+            <div className={`mb-4 transition-transform duration-300 ${
+              type.comingSoon ? 'text-neutral-400' : 'text-neutral-900 group-hover:scale-110'
+            }`}>
               {type.icon}
             </div>
-            <h3 className="text-xl font-bold text-neutral-900 mb-3 tracking-tight">
-              {type.title}
-            </h3>
-            <p className="text-neutral-600 text-sm leading-relaxed">
+            <div className="flex items-center gap-2 mb-3">
+              <h3 className={`text-xl font-bold mb-3 tracking-tight ${
+                type.comingSoon ? 'text-neutral-400' : 'text-neutral-900'
+              }`}>
+                {type.title}
+              </h3>
+              {type.comingSoon && (
+                <span className="px-2 py-1 bg-yellow-100 text-yellow-800 text-xs font-medium rounded-full">
+                  Coming Soon
+                </span>
+              )}
+            </div>
+            <p className={`text-sm leading-relaxed ${
+              type.comingSoon ? 'text-neutral-400' : 'text-neutral-600'
+            }`}>
               {type.description}
             </p>
           </button>
