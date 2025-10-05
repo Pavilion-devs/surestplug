@@ -9,39 +9,39 @@ import HowItWorksSection from './components/HowItWorksSection';
 import TestimonialsSection from './components/TestimonialsSection';
 import CTASection from './components/CTASection';
 import Footer from './components/Footer';
-import Shop from './pages/Shop';
+import Login from './pages/Login';
+import Register from './pages/Register';
+import Dashboard from './pages/Dashboard';
 
 function App() {
   return (
     <Router>
       <div className="antialiased text-neutral-900 bg-white">
-        <Header />
         <Routes>
+          {/* Landing Page */}
           <Route path="/" element={
-            <main className="relative">
-              <Hero />
-              <NetworkSection />
-              <TrustSection />
-              <HustlersSection />
-              <HowItWorksSection />
-              <TestimonialsSection />
-              <CTASection />
-            </main>
+            <>
+              <Header />
+              <main className="relative">
+                <Hero />
+                <NetworkSection />
+                <TrustSection />
+                <HustlersSection />
+                <HowItWorksSection />
+                <TestimonialsSection />
+                <CTASection />
+              </main>
+              <Footer />
+            </>
           } />
-          <Route path="/home" element={
-            <main className="relative">
-              <Hero />
-              <NetworkSection />
-              <TrustSection />
-              <HustlersSection />
-              <HowItWorksSection />
-              <TestimonialsSection />
-              <CTASection />
-            </main>
-          } />
-          <Route path="/shop" element={<Shop />} />
+
+          {/* Auth Pages (no header/footer) */}
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+
+          {/* Dashboard (no landing header/footer) */}
+          <Route path="/dashboard" element={<Dashboard />} />
         </Routes>
-        <Footer />
       </div>
     </Router>
   );

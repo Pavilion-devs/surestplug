@@ -309,7 +309,3 @@ Service Provider: “Create Service Listing,” active requests, earnings
 Service Seeker: Quick search bar, recent bookings, recommended providers
 
 Rider: Available deliveries, active delivery card, earnings
-
----
-
-Ola, do you want me to **sketch this as a wireframe layout (boxes/screens)** so you can **visualize the flow before coding**, or should I just list out the React components you’ll need to implement this MVP?
