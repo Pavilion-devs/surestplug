@@ -1,0 +1,315 @@
+Alright 🔥 let’s design the **frontend UI structure** for the MVP of Feranmia. Since this is still MVP Stage 1, the key is to keep it **simple, functional, and trust-focused** — not overloaded with features.
+
+I’ll break this down into **core sections (screens/pages)** and the **main UI components** needed for each.
+
+---
+
+# 🖥️ Core UI Structure for Feranmia MVP
+
+## **1. Onboarding & Authentication**
+
+**Screens:**
+
+* **Welcome / Landing Page**
+
+  * Logo + tagline (e.g. *“Find services, expand your business, earn commissions — all in one place”*)
+  * “Sign Up” and “Log In” buttons
+
+* **Registration Flow (4 paths)**
+
+  * Choose user type:
+
+    1. Service Provider
+    2. Service Seeker
+    3. Delivery Rider
+    4. Dropshipping Partner (Business Owner or Local Agent)
+  * Form fields (different for each type: e.g. business docs for owners, skills/location for agents)
+  * File upload for verification (e.g. ID, CAC certificate)
+  * KYC for dropshipping partners
+
+* **Login Page**
+
+  * Email/Password + social login (optional)
+  * “Forgot Password” link
+
+**Core Components:**
+
+* User Type Selector (cards or tabs)
+* Multi-step Registration Form (dynamic fields per role)
+* File Upload Input (drag & drop or button)
+* Verification Progress Indicator
+
+---
+
+## **2. Home / Dashboard (after login)**
+
+Each role sees a tailored **dashboard**.
+
+* **Service Seeker Home**
+
+  * Search bar (services or dropshipping opportunities)
+  * Categories grid (e.g., Cleaning, Plumbing, Fashion Sales)
+  * Featured providers/opportunities
+  * “Book a Service” or “Apply to Opportunity” quick actions
+
+* **Service Provider Home**
+
+  * “Create Service Listing” button
+  * Active service requests (list view)
+  * Earnings summary card
+  * Ratings & reviews preview
+
+* **Delivery Rider Home**
+
+  * Available delivery requests (list/map view)
+  * Active delivery details (customer info, pickup, drop-off)
+  * Earnings summary
+
+* **Business Owner (Dropshipping)**
+
+  * “Post Expansion Opportunity” button
+  * Agent applications (pending/accepted/rejected)
+  * Active agents list with performance snapshot
+  * Commission earnings overview
+
+* **Local Agent**
+
+  * Browse dropshipping opportunities (cards with filters)
+  * Applied opportunities (status tracker)
+  * Earnings dashboard
+  * Customer interactions/tasks
+
+**Core Components:**
+
+* Navigation Tabs (Home, Marketplace, Wallet, Profile, Support)
+* Search Bar + Filters
+* Cards (Service, Opportunity, Agent, Transaction)
+* Earnings Summary Widget
+* Notification Bell
+
+---
+
+## **3. Marketplace**
+
+**Service Marketplace Page**
+
+* Service listings grid (cards with provider name, price, rating, location)
+* Filters (location, price range, category, rating)
+* Service detail page (profile, portfolio, reviews, “Book Now” button)
+
+**Dropshipping Marketplace Page**
+
+* Opportunity listings grid (business name, commission %, location, product type)
+* Filters (location, industry, commission rate)
+* Opportunity detail page (brand guidelines, commission structure, apply button)
+
+**Core Components:**
+
+* Listing Card Component (with image, title, rating/commission info)
+* Filter Sidebar / Top Filter Bar
+* Detail Page with Tabs (About / Requirements / Reviews)
+* Apply or Book CTA Button
+
+---
+
+## **4. Escrow & Transactions**
+
+**Wallet Dashboard**
+
+* Balance overview (escrow funds, available to withdraw)
+* Transaction history list (with commission breakdowns)
+* “Withdraw to Bank” button
+
+**Escrow Payment Flow (Customer POV)**
+
+1. Select service/product
+2. Pay (goes into escrow)
+3. Track order/service status
+4. Confirm completion → funds split
+
+**Escrow Payment Flow (Business/Agent POV)**
+
+* View pending commissions
+* Track ongoing transactions
+* Earnings released after customer confirmation
+
+**Core Components:**
+
+* Wallet Card (with balances)
+* Transaction List Item (expandable for details)
+* Escrow Status Tracker (stepper: Payment → Escrow → Completion → Split)
+* Withdraw Modal
+
+---
+
+## **5. Delivery Integration**
+
+**For Service Provider or Agent**
+
+* Button: “Request Rider” after sale/service confirmed
+* Delivery Request Form (pickup, drop-off, instructions)
+* Rider matching screen
+* Delivery tracking (map view, rider contact info)
+
+**For Rider**
+
+* Available deliveries list
+* Active delivery card (pickup/dropoff info, customer name/phone)
+* Map navigation (integration with Google Maps or OpenStreetMap)
+
+**Core Components:**
+
+* Delivery Request Form
+* Rider Card (with accept/reject buttons)
+* Live Tracking Map Component
+* Delivery Status Stepper
+
+---
+
+## **6. Profile Management**
+
+**For All Users**
+
+* Profile header (photo/logo, name, role, verification badge)
+* Bio/Description
+* Location & Availability
+* Ratings & Reviews (if applicable)
+* Edit Profile button
+
+**Business Owner Profile**
+
+* Business documents & verification badge
+* Brand guidelines section
+* Commission structure setup
+* Active agent list
+
+**Local Agent Profile**
+
+* Skills & experience
+* Location covered
+* Sales portfolio/track record
+* Reviews from businesses
+
+**Core Components:**
+
+* Profile Header Card
+* Verification Badge
+* Tabs (About / Services / Reviews / Documents)
+* Edit Profile Form
+
+---
+
+## **7. Support & Notifications**
+
+* Notification Center (transactions, new applications, delivery updates)
+* In-app Chat / Messaging (business ↔ agent, customer ↔ provider)
+* Support Page (FAQs + contact support button)
+
+**Core Components:**
+
+* Notification Bell + Dropdown
+* Message Thread Component
+* Chat Input
+* FAQ Accordion
+
+---
+
+# 🎨 Suggested Navigation Flow
+
+* **Bottom Nav (Mobile First):** Home | Marketplace | Wallet | Profile | Support
+* **Top Nav (Desktop):** Logo (left), Search Bar (center), Notifications/Profile dropdown (right)
+
+---
+
+✅ **MVP Build Tip:** Start lean:
+
+1. Registration → Marketplace → Escrow flow → Wallet.
+2. Add delivery + advanced dashboards in next iteration.
+
+
+Suggested Web App UI Structure (MVP)
+1. Landing Page (Public)
+
+Hero section: tagline, “Get Started” CTA.
+
+Sections: How it Works, Why Feranmia, Testimonials (later), Footer with links.
+
+Navbar: Logo (left), “Login / Sign Up” (right).
+
+2. Auth Pages
+
+Login
+
+Register (with user type selection wizard):
+
+Step 1: Choose role → Service Seeker, Provider, Rider, Dropshipping Partner
+
+Step 2: Fill details (different per role)
+
+Step 3: Upload docs (if required)
+
+Step 4: Confirm
+
+3. Main App Layout
+
+After login, users see a dashboard with:
+
+Sidebar (left): Home, Marketplace, Wallet, Messages, Profile, Settings
+
+Top Nav (fixed): Search bar (center), Notifications + Profile dropdown (right)
+
+Content Area (center): Dynamic — changes per role
+
+4. Core Pages
+
+Marketplace Page
+
+Tabs: Services | Dropshipping
+
+Grid/List view of opportunities/services
+
+Filters on left (industry, location, commission, price)
+
+Clicking an item → Detail Page with “Apply” or “Book” button
+
+Wallet Page
+
+Balance card (Escrow vs Withdrawable)
+
+Transaction history table
+
+“Withdraw” button with modal
+
+Profile Page
+
+Profile header (pic/logo, name, verification badge)
+
+Tabs: Overview | Services/Opportunities | Reviews | Documents
+
+Edit Profile button
+
+Messages (Chat)
+
+Sidebar with conversations
+
+Chat window with messages, file upload
+
+Notifications
+
+Dropdown in top nav (new transaction, new application, etc.)
+
+5. Role-Specific Dashboards
+
+Business Owner: “Post Opportunity” button, agent list, commission analytics
+
+Local Agent: “Browse Opportunities,” earnings dashboard, applications tracker
+
+Service Provider: “Create Service Listing,” active requests, earnings
+
+Service Seeker: Quick search bar, recent bookings, recommended providers
+
+Rider: Available deliveries, active delivery card, earnings
+
+---
+
+Ola, do you want me to **sketch this as a wireframe layout (boxes/screens)** so you can **visualize the flow before coding**, or should I just list out the React components you’ll need to implement this MVP?
