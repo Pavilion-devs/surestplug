@@ -26,9 +26,16 @@ const Header = () => {
             <div
               onClick={handleLogoClick}
               role="button"
-              className="text-xl sm:text-2xl font-bold tracking-tight cursor-pointer hover:opacity-80 transition-opacity"
+              className="flex items-center gap-3 cursor-pointer hover:opacity-80 transition-opacity"
             >
-              SurestPlug
+              <img 
+                src="/logo.png" 
+                alt="SurestPlug Logo" 
+                className="h-8 w-8 sm:h-10 sm:w-10"
+              />
+              {/* <span className="text-xl sm:text-2xl font-bold tracking-tight text-neutral-900">
+                SurestPlug
+              </span> */}
             </div>
           </div>
           {/* Desktop Navigation */}

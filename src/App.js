@@ -12,6 +12,12 @@ import Footer from './components/Footer';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import Dashboard from './pages/Dashboard';
+import Marketplace from './pages/Marketplace';
+import Wallet from './pages/Wallet';
+import Profile from './pages/Profile';
+import Messages from './pages/Messages';
+import Settings from './pages/Settings';
+import CreateListing from './pages/CreateListing';
 
 function App() {
   return (
@@ -39,8 +45,14 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
 
-          {/* Dashboard (no landing header/footer) */}
+          {/* Dashboard Pages (with DashboardLayout) */}
           <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/marketplace" element={<Marketplace />} />
+          <Route path="/wallet" element={<Wallet />} />
+          <Route path="/profile" element={<Profile />} />
+          {/* <Route path="/messages" element={<Messages />} /> */}
+          <Route path="/settings" element={<Settings />} />
+          <Route path="/create-listing" element={<CreateListing />} />
         </Routes>
       </div>
     </Router>

@@ -1,34 +1,11 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import DashboardLayout from '../components/DashboardLayout';
 
 const Dashboard = () => {
-  const navigate = useNavigate();
-
-  const handleLogout = () => {
-    navigate('/');
-  };
-
   return (
-    <div className="min-h-screen bg-neutral-50">
-      {/* Dashboard Header */}
-      <div className="bg-white border-b border-neutral-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-16">
-            <h1 className="text-2xl font-bold tracking-tight text-neutral-900">
-              SurestPlug
-            </h1>
-            <button
-              onClick={handleLogout}
-              className="text-sm font-medium text-neutral-600 hover:text-neutral-900 transition-colors"
-            >
-              Logout
-            </button>
-          </div>
-        </div>
-      </div>
-
-      {/* Dashboard Content */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <DashboardLayout>
+      <div className="mx-auto">
         <div className="mb-8">
           <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-neutral-900 mb-2">
             Welcome to your Dashboard
@@ -78,7 +55,7 @@ const Dashboard = () => {
         <div className="bg-white border-2 border-neutral-200 rounded-lg p-8">
           <h3 className="text-xl font-bold text-neutral-900 mb-6">Quick Actions</h3>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-            <button className="border-2 border-neutral-200 rounded-lg p-4 hover:border-neutral-900 transition-all duration-300 text-left group">
+            <Link to="/marketplace" className="border-2 border-neutral-200 rounded-lg p-4 hover:border-neutral-900 transition-all duration-300 text-left group">
               <div className="w-12 h-12 rounded-full bg-neutral-100 flex items-center justify-center mb-3 group-hover:bg-neutral-900 transition-colors">
                 <svg className="w-6 h-6 text-neutral-900 group-hover:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
@@ -86,9 +63,9 @@ const Dashboard = () => {
               </div>
               <h4 className="font-bold text-neutral-900 mb-1">Browse Marketplace</h4>
               <p className="text-sm text-neutral-600">Find services or opportunities</p>
-            </button>
+            </Link>
 
-            <button className="border-2 border-neutral-200 rounded-lg p-4 hover:border-neutral-900 transition-all duration-300 text-left group">
+            <Link to="/create-listing" className="border-2 border-neutral-200 rounded-lg p-4 hover:border-neutral-900 transition-all duration-300 text-left group">
               <div className="w-12 h-12 rounded-full bg-neutral-100 flex items-center justify-center mb-3 group-hover:bg-neutral-900 transition-colors">
                 <svg className="w-6 h-6 text-neutral-900 group-hover:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
@@ -96,9 +73,9 @@ const Dashboard = () => {
               </div>
               <h4 className="font-bold text-neutral-900 mb-1">Create Listing</h4>
               <p className="text-sm text-neutral-600">Add a new service or opportunity</p>
-            </button>
+            </Link>
 
-            <button className="border-2 border-neutral-200 rounded-lg p-4 hover:border-neutral-900 transition-all duration-300 text-left group">
+            <Link to="/wallet" className="border-2 border-neutral-200 rounded-lg p-4 hover:border-neutral-900 transition-all duration-300 text-left group">
               <div className="w-12 h-12 rounded-full bg-neutral-100 flex items-center justify-center mb-3 group-hover:bg-neutral-900 transition-colors">
                 <svg className="w-6 h-6 text-neutral-900 group-hover:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" />
@@ -106,9 +83,9 @@ const Dashboard = () => {
               </div>
               <h4 className="font-bold text-neutral-900 mb-1">View Wallet</h4>
               <p className="text-sm text-neutral-600">Manage your earnings</p>
-            </button>
+            </Link>
 
-            <button className="border-2 border-neutral-200 rounded-lg p-4 hover:border-neutral-900 transition-all duration-300 text-left group">
+            <Link to="/profile" className="border-2 border-neutral-200 rounded-lg p-4 hover:border-neutral-900 transition-all duration-300 text-left group">
               <div className="w-12 h-12 rounded-full bg-neutral-100 flex items-center justify-center mb-3 group-hover:bg-neutral-900 transition-colors">
                 <svg className="w-6 h-6 text-neutral-900 group-hover:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
@@ -116,7 +93,7 @@ const Dashboard = () => {
               </div>
               <h4 className="font-bold text-neutral-900 mb-1">Edit Profile</h4>
               <p className="text-sm text-neutral-600">Update your information</p>
-            </button>
+            </Link>
           </div>
         </div>
 
@@ -148,7 +125,7 @@ const Dashboard = () => {
           </div>
         </div>
       </div>
-    </div>
+    </DashboardLayout>
   );
 };
 
